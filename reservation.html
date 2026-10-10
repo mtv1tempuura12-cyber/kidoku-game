@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <title>喫茶アネモネ｜同伴者予約確認（架空）</title>
+  <link rel="stylesheet" href="reservation.css">
+  <script src="reservation.js" defer></script>
+</head>
+<body>
+  <div class="fiction">教育用シミュレーション · 架空の店舗・決済画面</div>
+  <header class="brand"><span class="flower" aria-hidden="true">✳</span><p>KISSA <strong>ANEMONE</strong><small>喫茶 アネモネ</small></p></header>
+  <main>
+    <p class="eyebrow">GUEST RESERVATION</p>
+    <h1>ふたりの時間を、<br>窓際の席で。</h1>
+    <p class="lead">ご招待されたお客様へ。<br>同伴者確認を行い、ご予約を確定してください。</p>
+    <div class="reservation"><span>仮予約 No. AN-0816</span><h2>窓際・テーブル席</h2><dl><div><dt>日時</dt><dd>土曜日 16:00–17:00</dd></div><div><dt>人数</dt><dd>2名</dd></div><div><dt>予約者</dt><dd>みずき 様</dd></div></dl><p class="pending" id="reservation-status">同伴者確認待ち</p></div>
+    <ol class="steps" aria-label="予約手順"><li id="step-one" aria-current="step">01 予約確認</li><li id="step-two">02 仮決済</li><li id="step-three">03 本人確認</li></ol>
+    <section id="confirm-panel"><h2>ご予約に参加しますか？</h2><p>予約者の方が指定した席を確認し、次の手続きへお進みください。</p><button id="confirm-reservation" type="button">予約内容を確認して進む →</button><p class="fineprint">ここから先もゲーム内の演出です。</p></section>
+    <section id="payment-panel" hidden tabindex="-1"><h2>お席の確保に伴う仮決済</h2><div class="price"><span>同伴者予約保証金</span><strong>¥800</strong></div><p>ご来店時の飲食代から差し引きます。<br>お手続き完了後、ご予約を確定いたします。</p><div class="demo-card"><small>ゲーム用の架空カード</small><strong>•••• •••• •••• 0000</strong><span>KOHEI / DEMO ONLY</span></div><button id="simulate-payment" type="button">架空カードで仮決済する（模擬）</button><p class="fineprint">実際の請求はありません。カード情報の入力は不要です。</p></section>
+    <section id="identity-panel" hidden tabindex="-1"><h2>本人確認が未完了です</h2><p>ご予約の名義確認のため、同伴者の本人確認が必要です。</p><div class="identity-card"><span aria-hidden="true">▧</span><div><strong>航平／架空の証明書</strong><small>実在しないゲーム用データ</small></div></div><button id="simulate-identity" type="button">架空の証明書を提出する（模擬）</button><p class="fineprint">写真の撮影・アップロードはありません。</p></section>
+    <section id="complete-panel" hidden tabindex="-1"><div class="complete-symbol" aria-hidden="true">✓</div><h2>確認を受け付けました</h2><p>ご予約の確定通知をお待ちください。</p><p class="fineprint">これはゲーム内の受付表示です。実際の予約・決済・情報送信は行われていません。</p></section>
+    <button id="return-chat" class="back" type="button">手続きをやめてチャットへ戻る</button>
+  </main>
+  <footer>ANEMONE RESERVATION SERVICE<br><span>すべて架空の内容です。入力情報は収集しません。</span></footer>
+</body>
+</html>

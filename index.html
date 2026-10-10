@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#e9eee9">
+  <meta name="description" content="初めてマッチした夜、航平の返信で物語が変わる。架空のチャット型サスペンス。">
+  <title>既読の向こう｜チャット型サスペンス</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">メインコンテンツへ移動</a>
+  <main id="main" class="app-shell">
+    <div class="status-bar" aria-hidden="true"><span id="status-time">23:41</span><span class="status-island"></span><span>●●● ▰</span></div>
+
+    <section id="intro-screen" class="intro-screen" aria-labelledby="intro-title">
+      <div class="intro-top"><span class="intro-brand">既読の向こう</span><span class="fiction-pill">FICTION</span></div>
+      <div class="intro-photo-wrap"><img class="intro-photo" src="assets/mizuki-avatar.png" alt="架空の相手、みずきのプロフィール写真"><span class="match-heart" aria-hidden="true">♡</span></div>
+      <div class="intro-content">
+        <p class="eyebrow">23:41 · NEW MATCH</p>
+        <h1 id="intro-title">彼女が、<br>できた。<small>と思った。</small></h1>
+        <p class="intro-story">航平、31歳。交際経験ゼロ。女性と個人的に連絡先を交換したこともない。プロフィールに書いたのは「映画」と「夜の散歩」。三か月目の夜、初めて通知が鳴った。</p>
+        <button id="start-button" class="primary-button" type="button">既読をつける <span aria-hidden="true">↗</span></button>
+        <p class="intro-note">登場人物と会話は架空です。入力した文章は端末内だけで処理され、送信・保存されません。実際の個人情報は入力しないでください。</p>
+      </div>
+    </section>
+
+    <section id="chat-screen" class="chat-screen hidden" aria-label="みずきとの架空のチャット">
+      <div class="channel-bar"><span id="channel-name">mellow</span><span id="channel-description">MATCHING · マッチした相手</span></div>
+      <header class="chat-header">
+        <span class="chat-avatar"><img src="assets/mizuki-avatar.png" alt=""></span>
+        <div class="chat-contact"><strong>みずき <span>28</span></strong><small id="chat-presence">オンライン</small></div>
+        <button id="speed-button" class="speed-button" type="button" aria-label="メッセージ表示を早める" aria-pressed="false">×2</button>
+      </header>
+      <div class="chat-context"><span id="scene-time">23:41</span><span>教育用シミュレーション · FICTION</span></div>
+      <div id="chat-log" class="chat-log" role="log" aria-label="会話履歴" aria-live="off" tabindex="-1"></div>
+      <div class="composer">
+        <label class="composer-label" for="message-input">航平として返信</label>
+        <div class="composer-row"><textarea id="message-input" rows="1" maxlength="300" placeholder="メッセージを入力…" autocomplete="off" spellcheck="false" aria-describedby="compose-status"></textarea><button id="send-button" class="send-button" type="button" aria-label="メッセージを送る" disabled><span aria-hidden="true">➤</span></button></div>
+        <p id="compose-status" class="compose-status">相手のメッセージを待っています…</p>
+      </div>
+    </section>
+
+    <section id="result-screen" class="result-screen hidden" tabindex="-1" aria-labelledby="ending-title">
+      <div class="result-header"><span>THE END</span><span>既読の向こう</span></div>
+      <div class="result-scroll" id="result-scroll">
+        <p id="ending-kicker" class="ending-kicker"></p>
+        <h2 id="ending-title"></h2>
+        <p id="ending-story" class="ending-story"></p>
+        <div class="twist-card"><img src="assets/mizuki-avatar.png" alt=""><div><small>翌朝 · 新しいマッチ</small><strong>ゆり（架空）</strong><span>「何となく、放っておけなくて」</span></div></div>
+        <div class="score-card"><span>今夜の判断</span><strong id="score-value">100<small> / 100</small></strong><p id="score-message"></p></div>
+        <h3>会話の分岐</h3>
+        <div id="result-breakdown" class="result-breakdown"></div>
+        <div class="truth-card"><strong>この会話の仕掛け</strong><p>親密さを重ね、アプリ外に誘い、店の予約を口実にリンク・支払い・身分証を求める。ひとつずつは小さなお願いでも、重なるほど断りづらくなる。</p></div>
+        <p class="help-note">実際に支払ったり情報を送ったりした場合は、利用サービスや決済事業者に連絡し、消費生活センターなどへ相談してください。</p>
+        <button id="retry-button" class="primary-button" type="button">もう一度、あの夜へ <span aria-hidden="true">↗</span></button>
+        <p class="result-note">これは架空のシミュレーションです。実在のアプリや利用者とは関係ありません。</p>
+      </div>
+    </section>
+    <section id="switch-screen" class="switch-screen hidden" aria-label="チャットアプリを切り替え中" role="status"><div class="switch-icon">t.</div><strong>talo</strong><p>みずきとのトークを開いています…</p></section>
+    <dialog id="site-dialog" class="site-dialog" aria-label="架空の予約サイト">
+      <header class="browser-toolbar"><button id="close-site" type="button">‹ チャット</button><div><strong>seat.anemone.example</strong><small>ゲーム内の架空サイト</small></div></header>
+      <iframe id="reservation-frame" name="reservation-frame" title="喫茶アネモネの架空の予約ページ" sandbox="allow-scripts"></iframe>
+    </dialog>
+  </main>
+  <div id="screen-announcement" class="sr-only" role="status" aria-live="polite"></div>
+</body>
+</html>
